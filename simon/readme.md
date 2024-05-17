@@ -52,3 +52,6 @@ $$
 在对量子线路运行多次后，假设得到一组线性无关的非零字符串 $y_1, y_2,  \dots , y_{N}$ ，排列为矩阵 $A = [y_1, y_2, \dots , y_{N}]$。由于 $y_i \cdot s =0$ 均成立。因此齐次方程 $A^T x = 0$的解就是 $s$ 对应的形式，显然该方程有平凡解 $s=0$，而方程存在非平凡解需要 $r(A^T) < n$。
 同时问题中已知 $s$ 的个数为一，
 因此需要 $n-1$ 个线性无关的 $y_i$ 。
+
+# 参考文献
+1. [Simon's problem on Wiki](https://en.wikipedia.org/wiki/Simon%27s_problem)
