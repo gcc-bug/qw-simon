@@ -1,7 +1,7 @@
 # 问题描述
-对于一个黑盒函数(black box)或oracle $f:\{0,1\}^n\to \{0,1\}^n$，已知存在一个比特串 $s, s\in {0,1}^n$ 使得对任意 $x,y\in\{0,1\}^n$，当且仅当 $x\oplus y\in \{0^n,s\}$时 $f(x) = f(y)$ 。其中 $\oplus$ 表示异或。问题的目标是使用尽可能少的查询或者调用函数，得到 $s$ 的值。
+对于一个黑盒(black box)函数或oracle $f:\{0,1\}^n\to \{0,1\}^n$，已知存在一个比特串 $ s\in \{0,1\}^n$ 使得对任意 $x,y\in\{0,1\}^n$，$f(x) = f(y)$ 当且仅当 $x\oplus y\in \{0^n,s\}$，其中 $\oplus$ 表示异或。问题的目标是使用尽可能少的查询或者调用函数，得到 $s$ 的值。
 
-由于对任意字符串 $a\in {0,1}^n, b\in {0,1}^n$都有 $a\oplus b \oplus b = a$ ， $a\oplus b = b\oplus a$ ，  $a\oplus a = 0$ 成立。
+由于对任意字符串 $a\in \{0,1\}^n, b\in \{0,1\}^n$都有 $a\oplus b \oplus b = a$ ， $a\oplus b = b\oplus a$ ，  $a\oplus a = 0$ 成立。
 因此 $x \oplus y = 0^n$ ，当且仅当 $x=y$ 时成立。而 $x\oplus y = s$ 时有 $x\oplus s = y$。
 因此 
 $$
@@ -28,12 +28,12 @@ $$
 <!-- //todo: add fig -->
 其中 $U_{f}: |x\rangle |y\rangle \to |x\rangle |y\oplus f(x)\rangle$
 1. 初始化两个量子寄存器为 $0$, 系统状态为 $|0\rangle ^ n |0\rangle ^ n$ 。
-2. 应用Hadmard 门在所有第一个量子寄存器中的量子比特，系统状态变为 $\frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n - 1}|k\rangle |0\rangle ^ n$ 。
-3. 应用 $U_f$ 门，系统状态变为 $\frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n - 1}|k\rangle |f(k)\rangle ^ n$ 。
-4. 应用Hadmard 门在所有第一个量子寄存器中的量子比特，系统状态变为 $\frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n - 1} [\frac{1}{\sqrt{2^n}}\sum_{j=0}^{2^n - 1} (-1)^ {j\cdot k}| j\rangle] |0\rangle ^ n = \sum_{j=0}^{2^n - 1} | j\rangle [\frac{1}{2^n} \sum^{2^n - 1}_{k=0}(-1)^{j\cdot k} |f(k)\rangle]$ 。
+2. 应用 Hadamard 门在第一个量子寄存器中的所有量子比特，系统状态变为 $\frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n - 1}|k\rangle |0\rangle ^ n$ 。
+3. 应用 $U_f$ 门，系统状态变为 $\frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n - 1}|k\rangle |f(k)\rangle$ 。
+4. 应用 Hadamard 门在所有第一个量子寄存器中的量子比特，系统状态变为 $\frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n - 1} [\frac{1}{\sqrt{2^n}}\sum_{j=0}^{2^n - 1} (-1)^ {j\cdot k}| j\rangle] |f(k)\rangle = \sum_{j=0}^{2^n - 1} | j\rangle [\frac{1}{2^n} \sum^{2^n - 1}_{k=0}(-1)^{j\cdot k} |f(k)\rangle]$ 。
 5. 测量第一个量子寄存器的，测量一个状态为 $|j\rangle$ 的概率为 $||\frac{1}{2^n} \sum^{2^n - 1}_{k=0}(-1)^{j\cdot k} |f(k)\rangle||^2$
 
-上述状态中的 $\cdot$ 表示在 $\mathcal{F}_2$ 域上的乘法。对于字符串 $a = (a_1,a_2,\cdots , a_n), b = (b_1,b_2,\cdots , b_n)$ 有：
+上述状态中的 $\cdot$ 表示在 $\mathbb{F}_2$ 上的内积。对于字符串 $a = (a_1,a_2,\cdots , a_n), b = (b_1,b_2,\cdots , b_n)$ 有：
 $$
 a\cdot b = (a_1× b_1)\oplus(a_2× b_2)\oplus\cdots\oplus(a_n× b_n)
 $$
