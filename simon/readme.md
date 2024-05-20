@@ -1,5 +1,5 @@
 # 问题描述
-对于一个黑盒函数(black box)或oracle $f:\{0,1\}^n\to \{0,1\}^n$，已知存在一个比特串 $s, s\in {0,1}^n$ 使得对任意 $x,y\in\{0,1\}^n$，当且仅当 $x\oplus y\in \{0^n,s\}$时 $f(x) = f(y)$ 。其中 $\oplus$ 表示异或。问题的目标是使用尽可能少的查询或者调用函数，得到 $s$ 的值。
+对于一个黑盒函数(black box)或oracle $f:\{0,1\}^n\to \{0,1\}^n$，已知存在一个比特串 $s, s\in \{0,1\}^n$ 使得对任意 $x,y\in\{0,1\}^n$，当且仅当 $x\oplus y\in \{0^n,s\}$时 $f(x) = f(y)$ 。其中 $\oplus$ 表示异或。问题的目标是使用尽可能少的查询或者调用函数，得到 $s$ 的值。
 
 由于对任意字符串 $a\in {0,1}^n, b\in {0,1}^n$都有 $a\oplus b \oplus b = a$ ， $a\oplus b = b\oplus a$ ，  $a\oplus a = 0$ 成立。
 因此 $x \oplus y = 0^n$ ，当且仅当 $x=y$ 时成立。而 $x\oplus y = s$ 时有 $x\oplus s = y$。
