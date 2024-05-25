@@ -1,0 +1,13 @@
+规则图（Regular Graph）是一种图论中的特殊图，其每个顶点都具有相同的度数（degree）。换句话说，在一个k-正则图（k-regular graph）中，每个顶点都恰好连接k条边。
+
+规则图的特点：
+顶点度数一致：所有顶点的度数（连接的边数）相同。
+对称性：规则图通常具有高度的对称性和均匀性，这使得它们在许多算法和计算问题中具有特殊的用途。
+应用广泛：规则图在计算机网络、并行计算、密码学和量子计算等领域都有广泛应用。
+Regular Graph (规则图)
+A regular graph is a special type of graph in graph theory where each vertex has the same number of edges (degree). In a k-regular graph, each vertex has exactly k edges.
+
+Characteristics of a Regular Graph:
+Uniform Vertex Degree: All vertices have the same degree.
+Symmetry: Regular graphs often exhibit a high degree of symmetry and uniformity, making them useful in various algorithms and computational problems.
+Wide Applications: Regular graphs are widely used in computer networks, parallel computing, cryptography, and quantum computing.
