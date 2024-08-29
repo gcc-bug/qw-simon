@@ -45,6 +45,5 @@ symengine==0.11.0
 sympy==1.12
 tornado==6.4
 traitlets==5.14.3
-tweedledum==1.1.1
 typing_extensions==4.11.0
 wcwidth==0.2.13
